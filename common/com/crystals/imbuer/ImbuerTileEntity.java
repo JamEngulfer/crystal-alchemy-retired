@@ -215,58 +215,92 @@ public class ImbuerTileEntity extends TileEntity implements IInventory {
         else if (inv[3].itemID != CrystalMod.InertCrystal.itemID)
             return false;
         else {
-            ItemStack var1 = ImbuerRecipes.infusing().getInfusingResult(inv[0]);
-            if (var1 == null)
-                return false;
-            if (inv[2] == null)
-                return true;
-            if (!inv[2].isItemEqual(var1))
-                return false;
-            int result = inv[2].stackSize + var1.stackSize;
-            return result <= getInventoryStackLimit()
-                    && result <= var1.getMaxStackSize();
+            if(inv[3].itemID == CrystalMod.InertCrystal.itemID && inv[0].itemID == CrystalMod.InertCrystal.itemID){
+                ItemStack result = ImbuerRecipes.infusing().getCrystalInfusingResult(inv[0].getItemDamage(), inv[3].getItemDamage());
+                if(result != null){
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                ItemStack var1 = ImbuerRecipes.infusing().getInfusingResult(inv[0]);
+                if (var1 == null)
+                    return false;
+                if (inv[2] == null)
+                    return true;
+                if (!inv[2].isItemEqual(var1))
+                    return false;
+                int result = inv[2].stackSize + var1.stackSize;
+                return result <= getInventoryStackLimit()
+                        && result <= var1.getMaxStackSize();
+            }
         }
     }
 
     public void imbueItem() {
         if (this.canImbue()) {
-            ItemStack var1 = ImbuerRecipes.infusing().getInfusingResult(inv[0]);
-            ItemStack crystal = inv[3];
-            ItemStack operative = inv[0];
+            if((inv[3].itemID == CrystalMod.InertCrystal.itemID && inv[0].itemID == CrystalMod.InertCrystal.itemID) && ImbuerRecipes.infusing().getCrystalInfusingResult(inv[0].getItemDamage(), inv[3].getItemDamage()) != null){
+                ItemStack var1 = ImbuerRecipes.infusing().getCrystalInfusingResult(inv[0].getItemDamage(), inv[3].getItemDamage());
 
-            if (inv[2] == null) {
-                inv[2] = var1.copy();
-            } else if (inv[2].isItemEqual(var1)) {
-                inv[2].stackSize += var1.stackSize;
-            }
-
-            --inv[0].stackSize;
-            --inv[3].stackSize;
-
-            if (inv[0].stackSize <= 0) {
-                inv[0] = null;
-            }
-
-            if (inv[3].stackSize <= 0) {
-                inv[3] = null;
-            }
-
-            if (crystal.itemID == CrystalMod.InertCrystal.itemID
-                    && operative.itemID == CrystalMod.CrystalSword.itemID) {
-                // ItemStack item = this.inv[3];
-                int meta = crystal.getItemDamage();
-
-                if (meta == 1) {
-                    Essence essence = Essence.essenceList[1];
-                    EssenceHandler.addEssence(essence, inv[2]);
+                if (inv[2] == null) {
+                    inv[2] = var1.copy();
+                } else if (inv[2].isItemEqual(var1)) {
+                    inv[2].stackSize += var1.stackSize;
                 }
 
-                if (meta == 2) {
-                    Essence essence = Essence.essenceList[0];
-                    EssenceHandler.addEssence(essence, inv[2]);
+                --inv[0].stackSize;
+                --inv[3].stackSize;
+
+                if (inv[0].stackSize <= 0) {
+                    inv[0] = null;
+                }
+
+                if (inv[3].stackSize <= 0) {
+                    inv[3] = null;
+                }
+            } else {
+                ItemStack var1 = ImbuerRecipes.infusing().getInfusingResult(inv[0]);
+                ItemStack crystal = inv[3];
+                ItemStack operative = inv[0];
+
+                if (inv[2] == null) {
+                    inv[2] = var1.copy();
+                } else if (inv[2].isItemEqual(var1)) {
+                    inv[2].stackSize += var1.stackSize;
+                }
+
+                --inv[0].stackSize;
+                --inv[3].stackSize;
+
+                if (inv[0].stackSize <= 0) {
+                    inv[0] = null;
+                }
+
+                if (inv[3].stackSize <= 0) {
+                    inv[3] = null;
+                }
+
+                if (crystal.itemID == CrystalMod.InertCrystal.itemID
+                        && operative.itemID == CrystalMod.CrystalSword.itemID) {
+                    // ItemStack item = this.inv[3];
+                    int meta = crystal.getItemDamage();
+
+                    if (meta == 1) {
+                      //Essence essence = Essence.essenceList[0];
+                      //EssenceHandler.addEssence(essence, inv[2]);
+                    }
+
+                    if (meta == 2) {
+                        Essence essence = Essence.essenceList[0];
+                        EssenceHandler.addEssence(essence, inv[2]);
+                    }
+
+                    if (meta == 3) {
+                        Essence essence = Essence.essenceList[1];
+                        EssenceHandler.addEssence(essence, inv[2]);
+                    }
                 }
             }
-
         }
     }
 
