@@ -16,6 +16,8 @@ public class ImbuerRecipes {
     @SuppressWarnings("rawtypes")
     private Map infusingList = new HashMap();
     @SuppressWarnings("rawtypes")
+    private Map crystalInfusingList = new HashMap();
+    @SuppressWarnings("rawtypes")
     private Map experienceList = new HashMap();
     private HashMap<List<Integer>, ItemStack> metaInfusingList = new HashMap<List<Integer>, ItemStack>();
     private HashMap<List<Integer>, Float> metaExperience = new HashMap<List<Integer>, Float>();
@@ -32,18 +34,33 @@ public class ImbuerRecipes {
                 CrystalMod.InertCrystal, 1, 1), 0.7F);
         this.addInfusing(CrystalMod.BasicEssence.itemID, 2, new ItemStack(
                 CrystalMod.InertCrystal, 1, 2), 0.7F);
+        this.addInfusing(CrystalMod.BasicEssence.itemID, 3, new ItemStack(
+                CrystalMod.InertCrystal, 1, 3), 0.7F);
         this.addInfusing(CrystalMod.CrystalSword.itemID, new ItemStack(
                 CrystalMod.CrystalSword), 0.7F);
+        
+        this.addCrystalInfusing(1, 2, new ItemStack(CrystalMod.InertCrystal, 1, 3), 0.7F);
+        
     }
 
     /**
-     * Adds a smelting recipe.
+     * Adds an imbuing recipe.
      */
     @SuppressWarnings("unchecked")
     public void addInfusing(int par1, ItemStack par2ItemStack, float par3) {
         infusingList.put(Integer.valueOf(par1), par2ItemStack);
         experienceList.put(Integer.valueOf(par2ItemStack.itemID),
                 Float.valueOf(par3));
+    }
+    
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    public void addCrystalInfusing(int firstMetadata, int secondMetadata, ItemStack par3ItemStack, float par4) {
+        
+        HashMap operators = new HashMap();
+        operators.put(firstMetadata, secondMetadata);
+        crystalInfusingList.put(operators, par3ItemStack);
+        experienceList.put(Integer.valueOf(par3ItemStack.itemID),
+                Float.valueOf(par4));
     }
 
     /**
@@ -68,7 +85,7 @@ public class ImbuerRecipes {
     }
 
     /**
-     * A metadata sensitive version of adding a furnace recipe.
+     * A metadata sensitive version of adding an imbuer recipe.
      */
     public void addInfusing(int itemID, int metadata, ItemStack itemstack,
             float experience) {
@@ -92,10 +109,21 @@ public class ImbuerRecipes {
             return ret;
         return (ItemStack) infusingList.get(Integer.valueOf(item.itemID));
     }
+    
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public ItemStack getCrystalInfusingResult(int firstResult, int secondResult) {
+        
+        HashMap check = new HashMap();
+        check.put(firstResult, secondResult);
+        ItemStack ret = (ItemStack) crystalInfusingList.get(check);
+        if (ret != null)
+            return ret;
+        return null;
+    }
 
     /**
      * Grabs the amount of base experience for this item to give when pulled
-     * from the furnace slot.
+     * from the imbuer slot.
      */
     public float getExperience(ItemStack item) {
         if (item == null || item.getItem() == null)
