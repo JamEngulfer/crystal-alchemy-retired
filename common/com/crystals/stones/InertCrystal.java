@@ -15,7 +15,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class InertCrystal extends Item {
 
-    private Icon[] icons = new Icon[3];
+    private Icon[] icons = new Icon[64];
 
     public InertCrystal(int par1) {
         super(par1);
@@ -40,6 +40,8 @@ public class InertCrystal extends Item {
                 return "LuminousCrystal";
             case 2:
                 return "ExplosiveCrystal";
+            case 3:
+                return "Firey Crystal";
             default:
                 return "UnknownCrystal";
         }
@@ -51,6 +53,7 @@ public class InertCrystal extends Item {
         icons[0] = iconRegister.registerIcon("CrystalAlchemy:InertCrystal");
         icons[1] = iconRegister.registerIcon("CrystalAlchemy:LuminousCrystal");
         icons[2] = iconRegister.registerIcon("CrystalAlchemy:ExplosiveCrystal");
+        icons[3] = iconRegister.registerIcon("CrystalAlchemy:FireyCrystal");
     }
 
     public String getItemNameIS(ItemStack is) {
@@ -61,6 +64,8 @@ public class InertCrystal extends Item {
                 return "Luminous Crystal";
             case 2:
                 return "Explosive Crystal";
+            case 3:
+                return "Firey Crystal";
             default:
                 return "Unknown Crystal";
         }
