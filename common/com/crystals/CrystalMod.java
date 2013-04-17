@@ -29,7 +29,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "CrystalAlchemy", name = "Crystal Alchemy", version = "0.01")
+@Mod(modid = "CrystalAlchemy", name = "Crystal Alchemy", version = "0.03")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = { "CrystalMod" }, packetHandler = CrystalClientPacketHandler.class)
 public class CrystalMod {
 
@@ -191,6 +191,8 @@ public class CrystalMod {
                 "Luminous Essence");
         LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 2),
                 "Explosive Essence");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 3),
+                "Fiery Essence");
 
         // Imbued Crystal Registration
         LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 0),
@@ -199,6 +201,8 @@ public class CrystalMod {
                 "Luminous Crystal");
         LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 2),
                 "Explosive Crystal");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 3),
+                "Firey Crystal");
 
         // Tool Registration
         LanguageRegistry.addName(CrystalSword, "Crystal Sword");
@@ -401,7 +405,6 @@ public class CrystalMod {
         NetworkRegistry.instance().registerGuiHandler(this, guiHandler);
 
         proxy.registerServerTickHandler();
-
     }
 
 }
