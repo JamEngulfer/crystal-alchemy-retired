@@ -18,7 +18,7 @@ public abstract class Essence {
         this.weight = weight;
 
         if (essenceList[id] != null)
-            throw new IllegalArgumentException("Duplicate enchantment id!");
+            throw new IllegalArgumentException("Duplicate essence id!");
         else {
             essenceList[id] = this;
         }
