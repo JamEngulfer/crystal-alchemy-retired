@@ -15,6 +15,7 @@ import com.crystals.imbuer.ImbuerTileEntity;
 import com.crystals.infuser.InfuserTileEntity;
 import com.crystals.items.MagicFuelCoal;
 import com.crystals.ores.WorldGeneratorInertOre;
+import com.crystals.ores.WorldGeneratorNetherInertOre;
 import com.crystals.tabs.AlchemyCrystalTab;
 import com.crystals.tabs.AlchemyFuelTab;
 import com.crystals.tabs.AlchemyMachineTab;
@@ -193,6 +194,26 @@ public class CrystalMod {
                 "Explosive Essence");
         LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 3),
                 "Fiery Essence");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 4),
+                "Life Essence");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 5),
+                "Energy Essence");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 6),
+                "Healing Essence");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 7),
+                "Lightning Essence");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 8),
+                "Fauna Essence");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 9),
+                "Growth Essence");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 10),
+                "Ender Essence");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 11),
+                "Nether Essence");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 12),
+                "Magic Essence");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.BasicEssence, 1, 13),
+                "Void Essence");
 
         // Imbued Crystal Registration
         LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 0),
@@ -203,6 +224,26 @@ public class CrystalMod {
                 "Explosive Crystal");
         LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 3),
                 "Firey Crystal");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 4),
+                "Life Crystal");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 5),
+                "Energy Crystal");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 6),
+                "Healing Crystal");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 7),
+                "Lightning Crystal");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 8),
+                "Fauna Crystal");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 9),
+                "Growth Crystal");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 10),
+                "Ender Crystal");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 11),
+                "Nether Crystal");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 12),
+                "Magic Crystal");
+        LanguageRegistry.addName(new ItemStack(CrystalMod.InertCrystal, 1, 13),
+                "Void Crystal");
 
         // Tool Registration
         LanguageRegistry.addName(CrystalSword, "Crystal Sword");
@@ -287,6 +328,7 @@ public class CrystalMod {
 
         // WorldGenerator Registration
         GameRegistry.registerWorldGenerator(new WorldGeneratorInertOre());
+        GameRegistry.registerWorldGenerator(new WorldGeneratorNetherInertOre());
 
         /*
          * Crafting Recipes
