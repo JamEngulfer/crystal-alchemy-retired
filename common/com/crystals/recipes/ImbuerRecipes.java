@@ -115,9 +115,16 @@ public class ImbuerRecipes {
         
         HashMap check = new HashMap();
         check.put(firstResult, secondResult);
+        HashMap revcheck = new HashMap();   
+        revcheck.put(secondResult, firstResult);
         ItemStack ret = (ItemStack) crystalInfusingList.get(check);
-        if (ret != null)
-            return ret;
+        ItemStack revret = (ItemStack) crystalInfusingList.get(revcheck);
+        if (ret != null || revret != null)
+            if(ret == null){
+                return revret;
+            } else if (revret == null){
+                return ret;
+            }
         return null;
     }
 
