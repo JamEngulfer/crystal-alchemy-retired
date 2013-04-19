@@ -35,13 +35,33 @@ public class InertCrystal extends Item {
     public String getUnlocalizedName(ItemStack stack) {
         switch (stack.getItemDamage()) {
             case 0:
-                return "InertCrystal";
+                return "Inert Crystal";
             case 1:
-                return "LuminousCrystal";
+                return "Luminous Crystal";
             case 2:
-                return "ExplosiveCrystal";
+                return "Explosive Crystal";
             case 3:
                 return "Firey Crystal";
+            case 4:
+                return "Life Crystal";
+            case 5:
+                return "Energy Crystal";
+            case 6:
+                return "Healing Crystal";
+            case 7:
+                return "Lightning Crystal";
+            case 8:
+                return "Fauna Crystal";
+            case 9:
+                return "Growth Crystal";
+            case 10:
+                return "Ender Crystal";
+            case 11:
+                return "Nether Crystal";
+            case 12:
+                return "Magic Crystal";
+            case 13:
+                return "Void Crystal";
             default:
                 return "UnknownCrystal";
         }
@@ -54,6 +74,16 @@ public class InertCrystal extends Item {
         icons[1] = iconRegister.registerIcon("CrystalAlchemy:LuminousCrystal");
         icons[2] = iconRegister.registerIcon("CrystalAlchemy:ExplosiveCrystal");
         icons[3] = iconRegister.registerIcon("CrystalAlchemy:FireyCrystal");
+        icons[4] = iconRegister.registerIcon("CrystalAlchemy:LifeCrystal");
+        icons[5] = iconRegister.registerIcon("CrystalAlchemy:EnergyCrystal");
+        icons[6] = iconRegister.registerIcon("CrystalAlchemy:HealingCrystal");
+        icons[7] = iconRegister.registerIcon("CrystalAlchemy:LightningCrystal");
+        icons[8] = iconRegister.registerIcon("CrystalAlchemy:FaunaCrystal");
+        icons[9] = iconRegister.registerIcon("CrystalAlchemy:GrowthCrystal");
+        icons[10] = iconRegister.registerIcon("CrystalAlchemy:EnderCrystal");
+        icons[11] = iconRegister.registerIcon("CrystalAlchemy:NetherCrystal");
+        icons[12] = iconRegister.registerIcon("CrystalAlchemy:MagicCrystal");
+        icons[13] = iconRegister.registerIcon("CrystalAlchemy:VoidCrystal");
     }
 
     public String getItemNameIS(ItemStack is) {
@@ -66,6 +96,26 @@ public class InertCrystal extends Item {
                 return "Explosive Crystal";
             case 3:
                 return "Firey Crystal";
+            case 4:
+                return "Life Crystal";
+            case 5:
+                return "Energy Crystal";
+            case 6:
+                return "Healing Crystal";
+            case 7:
+                return "Lightning Crystal";
+            case 8:
+                return "Fauna Crystal";
+            case 9:
+                return "Growth Crystal";
+            case 10:
+                return "Ender Crystal";
+            case 11:
+                return "Nether Crystal";
+            case 12:
+                return "Magic Crystal";
+            case 13:
+                return "Void Crystal";
             default:
                 return "Unknown Crystal";
         }
@@ -75,7 +125,7 @@ public class InertCrystal extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(int ItemID, CreativeTabs tab, List itemList) {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 13; i++) {
             itemList.add(new ItemStack(ItemID, 1, i));
         }
     }
