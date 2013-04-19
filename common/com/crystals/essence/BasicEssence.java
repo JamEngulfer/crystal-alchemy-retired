@@ -44,11 +44,33 @@ public class BasicEssence extends Item {
     public String getUnlocalizedName(ItemStack stack) {
         switch (stack.getItemDamage()) {
             case 1:
-                return "LuminousEssence";
+                return "Luminous Essence";
             case 2:
-                return "ExplosiveEssence";
+                return "Explosive Essence";
+            case 3:
+                return "Firey Essence";
+            case 4:
+                return "Life Essence";
+            case 5:
+                return "Energy Essence";
+            case 6:
+                return "Healing Essence";
+            case 7:
+                return "Lightning Essence";
+            case 8:
+                return "Fauna Essence";
+            case 9:
+                return "Growth Essence";
+            case 10:
+                return "Ender Essence";
+            case 11:
+                return "Nether Essence";
+            case 12:
+                return "Magic Essence";
+            case 13:
+                return "Void Essence";
             default:
-                return "UnknownEssence";
+                return "Unknown Essence";
         }
     }
 
@@ -59,8 +81,30 @@ public class BasicEssence extends Item {
                 return "Luminous Essence";
             case 2:
                 return "Explosive Essence";
+            case 3:
+                return "Firey Essence";
+            case 4:
+                return "Life Essence";
+            case 5:
+                return "Energy Essence";
+            case 6:
+                return "Healing Essence";
+            case 7:
+                return "Lightning Essence";
+            case 8:
+                return "Fauna Essence";
+            case 9:
+                return "Growth Essence";
+            case 10:
+                return "Ender Essence";
+            case 11:
+                return "Nether Essence";
+            case 12:
+                return "Magic Essence";
+            case 13:
+                return "Void Essence";
             default:
-                return "Unidentified Essence";
+                return "Unknown Essence";
         }
 
         // return "Empty Essence Bottle";
