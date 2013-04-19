@@ -120,7 +120,21 @@ public class InertCrystal extends Item {
                 return "Unknown Crystal";
         }
     }
-
+    
+    @Override
+    public boolean hasEffect(ItemStack item){
+        switch(item.getItemDamage()){
+            case 5:
+                return true;
+            case 7:
+                return true;
+            case 12:
+                return true;
+            default:
+                return false;
+        }
+    }
+    
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     @SideOnly(Side.CLIENT)
