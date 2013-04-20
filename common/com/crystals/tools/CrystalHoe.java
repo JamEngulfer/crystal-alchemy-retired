@@ -1,17 +1,22 @@
 package com.crystals.tools;
 
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 
 import com.crystals.CrystalMod;
+import com.crystals.essence.Essence;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -80,5 +85,43 @@ public class CrystalHoe extends Item {
     @Override
     public void updateIcons(IconRegister iconRegister) {
         iconIndex = iconRegister.registerIcon("CrystalAlchemy:CrystalHoe");
+    }
+    
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @Override
+    public void addInformation(ItemStack itemStack, EntityPlayer player,
+            List information, boolean advancedTooltip) {
+        ItemStack item = itemStack;
+        if (item.stackTagCompound != null) {
+
+            NBTTagList list = (NBTTagList) item.stackTagCompound
+                    .getTag("essence");
+            if (list != null) {
+
+                if (item.hasTagCompound()) {
+
+                    short eID = ((NBTTagCompound) list.tagAt(0))
+                            .getShort("essenceID");
+
+                    if (Essence.essenceList[eID] != null) {
+
+                        if (Essence.essenceList[eID].essenceID == 3) {
+
+                            information.add("Food Consumption");
+
+                        }
+
+                        if (Essence.essenceList[eID].essenceID == 5) {
+
+                            information.add("Instant Growth");
+
+                        }
+                    }
+                }
+            }
+        } else {
+            information.add("No Ability");
+        }
+
     }
 }

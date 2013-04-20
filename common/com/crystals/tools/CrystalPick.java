@@ -1,12 +1,18 @@
 package com.crystals.tools;
 
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 
 import com.crystals.CrystalMod;
+import com.crystals.essence.Essence;
 
 public class CrystalPick extends CrystalToolBase {
 
@@ -61,5 +67,48 @@ public class CrystalPick extends CrystalToolBase {
     public void updateIcons(IconRegister iconRegister) {
         iconIndex = iconRegister.registerIcon("CrystalAlchemy:CrystalPick");
     }
+    
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @Override
+    public void addInformation(ItemStack itemStack, EntityPlayer player,
+            List information, boolean advancedTooltip) {
+        ItemStack item = itemStack;
+        if (item.stackTagCompound != null) {
 
+            NBTTagList list = (NBTTagList) item.stackTagCompound
+                    .getTag("essence");
+            if (list != null) {
+
+                if (item.hasTagCompound()) {
+
+                    short eID = ((NBTTagCompound) list.tagAt(0))
+                            .getShort("essenceID");
+
+                    if (Essence.essenceList[eID] != null) {
+
+                        if (Essence.essenceList[eID].essenceID == 2) {
+
+                            information.add("Explosive Effect");
+
+                        }
+
+                        if (Essence.essenceList[eID].essenceID == 3) {
+
+                            information.add("Healing XP Effect");
+
+                        }
+                        
+                        if (Essence.essenceList[eID].essenceID == 4) {
+
+                            information.add("Instant Break Void");
+
+                        }
+                    }
+                }
+            }
+        } else {
+            information.add("No Ability");
+        }
+
+    }
 }

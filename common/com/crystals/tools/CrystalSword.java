@@ -41,7 +41,7 @@ public class CrystalSword extends ItemSword {
 
                         if (Essence.essenceList[eID].essenceID == 0) {
 
-                            information.add("Lightning Damage");
+                            information.add("Lightning Attack");
 
                         }
 
@@ -50,10 +50,27 @@ public class CrystalSword extends ItemSword {
                             information.add("Fire Damage");
 
                         }
+                        
+                        if (Essence.essenceList[eID].essenceID == 2) {
+
+                            information.add("Explosive Effect");
+
+                        }
+                        
+                        if (Essence.essenceList[eID].essenceID == 3) {
+
+                            information.add("Life Steal");
+
+                        }
+                        
+                        if (Essence.essenceList[eID].essenceID == 4) {
+
+                            information.add("Teleportation");
+
+                        }
                     }
                 }
             }
-
         } else {
             information.add("No Ability");
         }
