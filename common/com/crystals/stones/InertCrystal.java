@@ -139,7 +139,7 @@ public class InertCrystal extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(int ItemID, CreativeTabs tab, List itemList) {
-        for (int i = 0; i < 13; i++) {
+        for (int i = 0; i < 14; i++) {
             itemList.add(new ItemStack(ItemID, 1, i));
         }
     }
