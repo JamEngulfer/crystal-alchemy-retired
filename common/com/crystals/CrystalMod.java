@@ -136,7 +136,7 @@ public class CrystalMod {
 
     // Tool Material
     static EnumToolMaterial EnumToolMaterialCrystal = EnumHelper
-            .addToolMaterial("Crystal", 1, 250, 4.0F, 1, 15);
+            .addToolMaterial("Crystal", 1, 1024, 4.0F, 1, 15);
 
     // @SidedProxy(clientSide="com.crystals.ClientTextures", serverSide =
     // "com.crystals.CrystalProxy")
