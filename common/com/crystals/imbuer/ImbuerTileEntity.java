@@ -291,12 +291,62 @@ public class ImbuerTileEntity extends TileEntity implements IInventory {
                     }
 
                     if (meta == 2) {
-                        Essence essence = Essence.essenceList[0];
+                        Essence essence = Essence.essenceList[2];
                         EssenceHandler.addEssence(essence, inv[2]);
                     }
 
                     if (meta == 3) {
                         Essence essence = Essence.essenceList[1];
+                        EssenceHandler.addEssence(essence, inv[2]);
+                    }
+                    
+                    if (meta == 4) {
+                        //Essence essence = Essence.essenceList[1];
+                        //EssenceHandler.addEssence(essence, inv[2]);
+                    }
+                    
+                    if (meta == 5) {
+                        //Essence essence = Essence.essenceList[1];
+                        //EssenceHandler.addEssence(essence, inv[2]);
+                    }
+                    
+                    if (meta == 6) {
+                        Essence essence = Essence.essenceList[3];
+                        EssenceHandler.addEssence(essence, inv[2]);
+                    }
+                    
+                    if (meta == 7) {
+                        Essence essence = Essence.essenceList[0];
+                        EssenceHandler.addEssence(essence, inv[2]);
+                    }
+                    
+                    if (meta == 8) {
+                        //Essence essence = Essence.essenceList[1];
+                        //EssenceHandler.addEssence(essence, inv[2]);
+                    }
+                    
+                    if (meta == 9) {
+                        //Essence essence = Essence.essenceList[5];
+                        //EssenceHandler.addEssence(essence, inv[2]);
+                    }
+                    
+                    if (meta == 10) {
+                        //Essence essence = Essence.essenceList[1];
+                        //EssenceHandler.addEssence(essence, inv[2]);
+                    }
+                    
+                    if (meta == 11) {
+                        //Essence essence = Essence.essenceList[1];
+                        //EssenceHandler.addEssence(essence, inv[2]);
+                    }
+                    
+                    if (meta == 12) {
+                        //Essence essence = Essence.essenceList[1];
+                        //EssenceHandler.addEssence(essence, inv[2]);
+                    }
+                    
+                    if (meta == 13){
+                        Essence essence = Essence.essenceList[4];
                         EssenceHandler.addEssence(essence, inv[2]);
                     }
                 }
