@@ -7,7 +7,7 @@ public abstract class Essence {
 
     public static final Essence lightning = new EssenceLightning(0, 10);
 
-    public static final Essence fire = new EssenceLightning(1, 10);
+    public static final Essence fire = new EssenceFire(1, 10);
     
     public static final Essence explosive = new EssenceExplosive(2, 10);
     
