@@ -5,11 +5,12 @@ import net.minecraft.item.Item;
 
 import com.crystals.CrystalMod;
 
+@SuppressWarnings("unused")
 public class BottleEssence extends Item {
 
     public BottleEssence(int ItemID) {
         super(ItemID);
-        setCreativeTab(CrystalMod.alchemyCrystalTab);
+        //setCreativeTab(CrystalMod.alchemyCrystalTab);
         setHasSubtypes(true);
         setMaxDamage(0);
         maxStackSize = 16;
