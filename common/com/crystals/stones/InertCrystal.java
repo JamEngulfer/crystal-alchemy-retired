@@ -35,33 +35,33 @@ public class InertCrystal extends Item {
     public String getUnlocalizedName(ItemStack stack) {
         switch (stack.getItemDamage()) {
             case 0:
-                return "Inert Crystal";
+                return "Inert Crystal"; //Primary
             case 1:
-                return "Luminous Crystal";
+                return "Luminous Crystal"; //Primary
             case 2:
-                return "Explosive Crystal";
+                return "Explosive Crystal"; //Primary
             case 3:
-                return "Firey Crystal";
+                return "Firey Crystal"; //Secondary
             case 4:
-                return "Life Crystal";
+                return "Life Crystal"; //Primary
             case 5:
-                return "Energy Crystal";
+                return "Energy Crystal"; //Special
             case 6:
-                return "Healing Crystal";
+                return "Healing Crystal"; //Secondary
             case 7:
-                return "Lightning Crystal";
+                return "Lightning Crystal"; //Tertiary
             case 8:
-                return "Fauna Crystal";
+                return "Fauna Crystal"; //Primary
             case 9:
-                return "Growth Crystal";
+                return "Growth Crystal"; //Secondary
             case 10:
-                return "Ender Crystal";
+                return "Ender Crystal"; //Primary
             case 11:
-                return "Nether Crystal";
+                return "Nether Crystal"; //Primary
             case 12:
-                return "Magic Crystal";
+                return "Magic Crystal"; //Secondary
             case 13:
-                return "Void Crystal";
+                return "Void Crystal"; //Tertiary
             default:
                 return "UnknownCrystal";
         }
