@@ -211,7 +211,7 @@ public class DiffuserTileEntity extends TileEntity implements IInventory {
     private boolean canInfuse() {
         if (inv[0] == null || inv[3] == null)
             return false;
-        else if (inv[3].itemID != CrystalMod.BottleEssence.itemID)
+        else if (inv[3].itemID != CrystalMod.InertCrystal.itemID)
             return false;
         else {
             ItemStack var1 = DiffuserRecipes.infusing().getInfusingResult(
