@@ -38,9 +38,24 @@ public class ImbuerRecipes {
                 CrystalMod.InertCrystal, 1, 3), 0.7F);
         this.addInfusing(CrystalMod.CrystalSword.itemID, new ItemStack(
                 CrystalMod.CrystalSword), 0.7F);
+        this.addInfusing(CrystalMod.CrystalPick.itemID, new ItemStack(
+                CrystalMod.CrystalPick), 0.7F);
+        this.addInfusing(CrystalMod.CrystalSpade.itemID, new ItemStack(
+                CrystalMod.CrystalSpade), 0.7F);
+        this.addInfusing(CrystalMod.CrystalHoe.itemID, new ItemStack(
+                CrystalMod.CrystalHoe), 0.7F);
+        this.addInfusing(CrystalMod.CrystalAxe.itemID, new ItemStack(
+                CrystalMod.CrystalAxe), 0.7F);
         
+        //Secondary Crystals
         this.addCrystalInfusing(1, 2, new ItemStack(CrystalMod.InertCrystal, 1, 3), 0.7F);
+        this.addCrystalInfusing(4, 5, new ItemStack(CrystalMod.InertCrystal, 1, 6), 0.7F);
+        this.addCrystalInfusing(10, 11, new ItemStack(CrystalMod.InertCrystal, 1, 12), 0.7F);
+        this.addCrystalInfusing(8, 4, new ItemStack(CrystalMod.InertCrystal, 1, 9), 0.7F);
         
+        //Tertiary Crystals
+        this.addCrystalInfusing(2, 3, new ItemStack(CrystalMod.InertCrystal, 1, 7), 0.7F);
+        this.addCrystalInfusing(10, 12, new ItemStack(CrystalMod.InertCrystal, 1, 13), 0.7F);
     }
 
     /**
