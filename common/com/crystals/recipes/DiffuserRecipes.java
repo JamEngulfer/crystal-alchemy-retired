@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -30,9 +31,19 @@ public class DiffuserRecipes {
 
     private DiffuserRecipes() {
         this.addInfusing(Item.lightStoneDust.itemID, new ItemStack(
-                CrystalMod.BasicEssence, 1, 1), 0.7F);
+                CrystalMod.InertCrystal, 1, 1), 0.7F);
         this.addInfusing(Item.gunpowder.itemID, new ItemStack(
-                CrystalMod.BasicEssence, 1, 2), 0.7F);
+                CrystalMod.InertCrystal, 1, 2), 0.7F);
+        this.addInfusing(Item.appleGold.itemID, new ItemStack(
+                CrystalMod.InertCrystal, 1, 4), 0.7F);
+        this.addInfusing(Item.seeds.itemID, new ItemStack(
+                CrystalMod.InertCrystal, 1, 8), 0.7F);
+        this.addInfusing(Block.sapling.blockID, new ItemStack(
+                CrystalMod.InertCrystal, 1, 8), 0.7F);
+        this.addInfusing(Item.enderPearl.itemID, new ItemStack(
+                CrystalMod.InertCrystal, 1, 10), 0.7F);
+        this.addInfusing(Item.netherStar.itemID, new ItemStack(
+                CrystalMod.InertCrystal, 1, 11), 0.7F);
     }
 
     /**
