@@ -1,9 +1,6 @@
 package com.crystals.essence;
 
-import java.util.List;
-
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
@@ -13,13 +10,14 @@ import com.crystals.CrystalMod;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("unused")
 public class BasicEssence extends Item {
 
     public Icon[] icons = new Icon[3];
 
     public BasicEssence(int ItemID) {
         super(ItemID);
-        setCreativeTab(CrystalMod.alchemyCrystalTab);
+        //setCreativeTab(CrystalMod.alchemyCrystalTab);
         setHasSubtypes(true);
         setMaxDamage(0);
         maxStackSize = 1;
@@ -44,33 +42,33 @@ public class BasicEssence extends Item {
     public String getUnlocalizedName(ItemStack stack) {
         switch (stack.getItemDamage()) {
             case 1:
-                return "Luminous Essence";
+                return "DEPRACATED ITEM";
             case 2:
-                return "Explosive Essence";
+                return "DEPRACATED ITEM";
             case 3:
-                return "Firey Essence";
+                return "DEPRACATED ITEM";
             case 4:
-                return "Life Essence";
+                return "DEPRACATED ITEM";
             case 5:
-                return "Energy Essence";
+                return "DEPRACATED ITEM";
             case 6:
-                return "Healing Essence";
+                return "DEPRACATED ITEM";
             case 7:
-                return "Lightning Essence";
+                return "DEPRACATED ITEM";
             case 8:
-                return "Fauna Essence";
+                return "DEPRACATED ITEM";
             case 9:
-                return "Growth Essence";
+                return "DEPRACATED ITEM";
             case 10:
-                return "Ender Essence";
+                return "DEPRACATED ITEM";
             case 11:
-                return "Nether Essence";
+                return "DEPRACATED ITEM";
             case 12:
-                return "Magic Essence";
+                return "DEPRACATED ITEM";
             case 13:
-                return "Void Essence";
+                return "DEPRACATED ITEM";
             default:
-                return "Unknown Essence";
+                return "DEPRACATED ITEM";
         }
     }
 
@@ -78,38 +76,39 @@ public class BasicEssence extends Item {
         switch (is.getItemDamage()) {
         // case 0 : return "Empty Essence Bottle";
             case 1:
-                return "Luminous Essence";
+                return "DEPRACATED ITEM";
             case 2:
-                return "Explosive Essence";
+                return "DEPRACATED ITEM";
             case 3:
-                return "Firey Essence";
+                return "DEPRACATED ITEM";
             case 4:
-                return "Life Essence";
+                return "DEPRACATED ITEM";
             case 5:
-                return "Energy Essence";
+                return "DEPRACATED ITEM";
             case 6:
-                return "Healing Essence";
+                return "DEPRACATED ITEM";
             case 7:
-                return "Lightning Essence";
+                return "DEPRACATED ITEM";
             case 8:
-                return "Fauna Essence";
+                return "DEPRACATED ITEM";
             case 9:
-                return "Growth Essence";
+                return "DEPRACATED ITEM";
             case 10:
-                return "Ender Essence";
+                return "DEPRACATED ITEM";
             case 11:
-                return "Nether Essence";
+                return "DEPRACATED ITEM";
             case 12:
-                return "Magic Essence";
+                return "DEPRACATED ITEM";
             case 13:
-                return "Void Essence";
+                return "DEPRACATED ITEM";
             default:
-                return "Unknown Essence";
+                return "DEPRACATED ITEM";
         }
 
         // return "Empty Essence Bottle";
     }
 
+    /*
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     @SideOnly(Side.CLIENT)
@@ -117,6 +116,6 @@ public class BasicEssence extends Item {
         for (int i = 1; i < 3; i++) {
             itemList.add(new ItemStack(ItemID, 1, i));
         }
-    }
+    }*/
 
 }
