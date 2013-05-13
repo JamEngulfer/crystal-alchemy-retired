@@ -488,8 +488,8 @@ public class ImbuerTileEntity extends TileEntity implements IInventory {
                     }
                     
                     if (meta == 13){
-                        //Essence essence = Essence.essenceList[4];
-                        //EssenceHandler.addEssence(essence, inv[2]);
+                        Essence essence = Essence.essenceList[4];
+                        EssenceHandler.addEssence(essence, inv[2]);
                     }
                 }
                 
