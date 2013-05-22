@@ -53,9 +53,10 @@ public class CrystalHoe extends Item {
             int var11 = par3World.getBlockId(par4, par5, par6);
             int var12 = par3World.getBlockId(par4, par5 + 1, par6);
             if ((par7 == 0 || var12 != 0 || var11 != Block.grass.blockID)
-                    && var11 != Block.dirt.blockID)
+                    && var11 != Block.dirt.blockID && var11 != Block.crops.blockID 
+                    && var11 != Block.potato.blockID && var11 != Block.carrot.blockID)
                 return false;
-            else {
+            else if (var11 == Block.grass.blockID || var11 == Block.dirt.blockID){
                 Block var13 = Block.tilledField;
                 par3World.playSoundEffect(par4 + 0.5F, par5 + 0.5F,
                         par6 + 0.5F, var13.stepSound.getStepSound(),
@@ -68,8 +69,90 @@ public class CrystalHoe extends Item {
                     par1ItemStack.damageItem(1, par2EntityPlayer);
                     return true;
                 }
-            }
+            } else if(var11 == Block.crops.blockID){
+                Block var13 = Block.crops;
+                par3World.playSoundEffect(par4 + 0.5F, par5 + 0.5F,
+                        par6 + 0.5F, var13.stepSound.getStepSound(),
+                        (var13.stepSound.getVolume() + 1.0F) / 2.0F,
+                        var13.stepSound.getPitch() * 0.8F);
+                
+                if(getActiveEssence(par1ItemStack) == 3){
+                    int weight = 10;
+
+                    int random = 0 + (int)(Math.random() * ((100 - 0) + 1));
+                    if(random < weight){
+                        if(par2EntityPlayer.getFoodStats().getFoodLevel() < 20){
+                            par2EntityPlayer.getFoodStats().setFoodLevel(par2EntityPlayer.getFoodStats().getFoodLevel() + 1);
+                            par1ItemStack.damageItem(2, par2EntityPlayer);
+                        }
+                    }
+                }
+
+                if (par3World.isRemote)
+                    return true;
+                else if(getActiveEssence(par1ItemStack) == 5){
+
+                    par3World.setBlock(par4, par5, par6, var13.blockID, 7, 0x04);
+                    par1ItemStack.damageItem(2, par2EntityPlayer);
+                    return true;
+                }
+            } else if(var11 == Block.potato.blockID){
+                Block var13 = Block.potato;
+                par3World.playSoundEffect(par4 + 0.5F, par5 + 0.5F,
+                        par6 + 0.5F, var13.stepSound.getStepSound(),
+                        (var13.stepSound.getVolume() + 1.0F) / 2.0F,
+                        var13.stepSound.getPitch() * 0.8F);
+
+                if(getActiveEssence(par1ItemStack) == 3){
+                    int weight = 10;
+
+                    int random = 0 + (int)(Math.random() * ((100 - 0) + 1));
+                    if(random < weight){
+                        if(par2EntityPlayer.getFoodStats().getFoodLevel() < 20){
+                            par2EntityPlayer.getFoodStats().setFoodLevel(par2EntityPlayer.getFoodStats().getFoodLevel() + 1);
+                            par1ItemStack.damageItem(2, par2EntityPlayer);
+                        }
+                    }
+                }
+
+                if (par3World.isRemote)
+                    return true;
+                else if(getActiveEssence(par1ItemStack) == 5){
+
+                    par3World.setBlock(par4, par5, par6, var13.blockID, 7, 0x04);
+                    par1ItemStack.damageItem(2, par2EntityPlayer);
+                    return true;
+                }
+            } else if(var11 == Block.carrot.blockID){
+                Block var13 = Block.carrot;
+                par3World.playSoundEffect(par4 + 0.5F, par5 + 0.5F,
+                        par6 + 0.5F, var13.stepSound.getStepSound(),
+                        (var13.stepSound.getVolume() + 1.0F) / 2.0F,
+                        var13.stepSound.getPitch() * 0.8F);
+
+                if(getActiveEssence(par1ItemStack) == 3){
+                    int weight = 10;
+
+                    int random = 0 + (int)(Math.random() * ((100 - 0) + 1));
+                    if(random < weight){
+                        if(par2EntityPlayer.getFoodStats().getFoodLevel() < 20){
+                            par2EntityPlayer.getFoodStats().setFoodLevel(par2EntityPlayer.getFoodStats().getFoodLevel() + 1);
+                            par1ItemStack.damageItem(2, par2EntityPlayer);
+                        }
+                    }
+                }
+
+                if (par3World.isRemote)
+                    return true;
+                else if(getActiveEssence(par1ItemStack) == 5){
+
+                    par3World.setBlock(par4, par5, par6, var13.blockID, 7, 0x04);
+                    par1ItemStack.damageItem(2, par2EntityPlayer);
+                    return true;
+                }
+            } 
         }
+        return true;
     }
 
     @Override
@@ -83,10 +166,10 @@ public class CrystalHoe extends Item {
     }
 
     @Override
-    public void updateIcons(IconRegister iconRegister) {
-        iconIndex = iconRegister.registerIcon("CrystalAlchemy:CrystalHoe");
+    public void registerIcons(IconRegister iconRegister) {
+        itemIcon = iconRegister.registerIcon("CrystalAlchemy:CrystalHoe");
     }
-    
+
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     public void addInformation(ItemStack itemStack, EntityPlayer player,
@@ -122,6 +205,28 @@ public class CrystalHoe extends Item {
         } else {
             information.add("No Ability");
         }
+
+    }
+
+    public int getActiveEssence(ItemStack itemStack) {
+        ItemStack item = itemStack;
+        if (item.stackTagCompound != null) {
+
+            NBTTagList list = (NBTTagList) item.stackTagCompound
+                    .getTag("essence");
+            if (list != null) {
+
+                if (item.hasTagCompound()) {
+
+                    short eID = ((NBTTagCompound) list.tagAt(0))
+                            .getShort("essenceID");
+
+                    return (int) eID;
+                }
+            }
+        }
+
+        return -1;
 
     }
 }
