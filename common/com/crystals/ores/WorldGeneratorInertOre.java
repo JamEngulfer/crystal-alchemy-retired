@@ -2,6 +2,7 @@ package com.crystals.ores;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -30,8 +31,8 @@ public class WorldGeneratorInertOre implements IWorldGenerator {
             int Xcoord = i + random.nextInt(16);
             int Zcoord = j + random.nextInt(16);
             int Ycoord = 20 + random.nextInt(45);
-
-            new WorldGenMinable(CrystalMod.InertOre.blockID, 2).generate(world,
+            
+            new WorldGenMinable(CrystalMod.InertOre.blockID, 2, Block.stone.blockID).generate(world,
                     random, Xcoord, Ycoord, Zcoord);
         }
     }
