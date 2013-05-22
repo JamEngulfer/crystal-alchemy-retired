@@ -180,7 +180,7 @@ public class CrystalMod {
         // Item Registration
         LanguageRegistry.addName(MagicFuelCoal, "Alchemical Fuel");
         LanguageRegistry.addName(MagicFuelCoalSuper, "Infused Alchemical Fuel");
-        LanguageRegistry.addName(InfusingStone, "Infusion Stone");
+        LanguageRegistry.addName(InfusingStone, "Infusing Stone");
         LanguageRegistry.addName(ImbuingStone, "Imbuing Stone");
         LanguageRegistry.addName(DiffusingStone, "Diffusing Stone");
 
@@ -357,12 +357,12 @@ public class CrystalMod {
 
         // Imbuing Stone
         GameRegistry.addRecipe(new ItemStack(DiffusingStone, 1), new Object[] {
-                "GOG", "SIS", "GOG", 'G', Block.glass, 'O', Block.obsidian,
-                'S', Item.enderPearl, 'I', InfusingStone });
+                "GOG", "EIE", "GOG", 'G', Block.glass, 'O', Block.obsidian,
+                'E', Item.enderPearl, 'I', InfusingStone });
 
-        GameRegistry.addRecipe(new ItemStack(BottleEssence, 4), new Object[] {
+        /*GameRegistry.addRecipe(new ItemStack(BottleEssence, 4), new Object[] {
                 "GIG", "G G", "GGG", 'I', CrystalMod.InertCrystal, 'G',
-                Block.glass, });
+                Block.glass, });*/
 
         /*
          * Alchemy Machines
@@ -389,7 +389,7 @@ public class CrystalMod {
 
         GameRegistry.addRecipe(new ItemStack(AlchemyBlock, 1), new Object[] {
                 "ODO", "OEO", "OIO", 'O', Block.obsidian, 'E', Item.enderPearl,
-                'I', Block.blockSteel, 'D', Item.diamond });
+                'I', Block.blockIron, 'D', Item.diamond });
 
         GameRegistry.addRecipe(new ItemStack(AlchemyBlockSuper, 1),
                 new Object[] { "ODO", "OEO", "OGO", 'O', Block.obsidian, 'E',
@@ -411,7 +411,7 @@ public class CrystalMod {
                         Item.stick, });
 
         GameRegistry.addRecipe(new ItemStack(CrystalPick, 1),
-                new Object[] { "III", "S", "S", 'I', CrystalMod.InertCrystal,
+                new Object[] { "III", " S ", " S ", 'I', CrystalMod.InertCrystal,
                         'S', Item.stick, });
 
         GameRegistry.addRecipe(new ItemStack(CrystalAxe, 1), new Object[] {
