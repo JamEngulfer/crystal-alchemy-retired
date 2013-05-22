@@ -68,7 +68,7 @@ public class InertCrystal extends Item {
     }
 
     @Override
-    public void updateIcons(IconRegister iconRegister) {
+    public void registerIcons(IconRegister iconRegister) {
         // int damage =
         icons[0] = iconRegister.registerIcon("CrystalAlchemy:InertCrystal");
         icons[1] = iconRegister.registerIcon("CrystalAlchemy:LuminousCrystal");
