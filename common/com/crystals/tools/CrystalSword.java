@@ -78,7 +78,7 @@ public class CrystalSword extends ItemSword {
     }
 
     @Override
-    public void updateIcons(IconRegister iconRegister) {
-        iconIndex = iconRegister.registerIcon("CrystalAlchemy:CrystalSword");
+    public void registerIcons(IconRegister iconRegister) {
+        itemIcon = iconRegister.registerIcon("CrystalAlchemy:CrystalSword");
     }
 }

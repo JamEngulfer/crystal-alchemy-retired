@@ -26,8 +26,8 @@ public class ImbuingStone extends Item {
     }
 
     @Override
-    public void updateIcons(IconRegister iconRegister) {
-        iconIndex = iconRegister.registerIcon("CrystalAlchemy:ImbuingStone");
+    public void registerIcons(IconRegister iconRegister) {
+        itemIcon = iconRegister.registerIcon("CrystalAlchemy:ImbuingStone");
     }
 
 }

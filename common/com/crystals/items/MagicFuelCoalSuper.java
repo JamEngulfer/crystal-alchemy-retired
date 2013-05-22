@@ -15,8 +15,8 @@ public class MagicFuelCoalSuper extends Item {
     }
 
     @Override
-    public void updateIcons(IconRegister iconRegister) {
-        iconIndex = iconRegister
+    public void registerIcons(IconRegister iconRegister) {
+        itemIcon = iconRegister
                 .registerIcon("CrystalAlchemy:AlchemicalCoalSuper");
     }
 }

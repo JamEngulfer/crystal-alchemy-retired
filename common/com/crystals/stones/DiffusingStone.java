@@ -26,8 +26,8 @@ public class DiffusingStone extends Item {
     }
 
     @Override
-    public void updateIcons(IconRegister iconRegister) {
-        iconIndex = iconRegister.registerIcon("CrystalAlchemy:DiffusingStone");
+    public void registerIcons(IconRegister iconRegister) {
+        itemIcon = iconRegister.registerIcon("CrystalAlchemy:DiffusingStone");
     }
 
 }
