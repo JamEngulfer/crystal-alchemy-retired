@@ -28,8 +28,8 @@ public class InfuserRecipes {
     }
 
     private InfuserRecipes() {
-        this.addInfusing(CrystalMod.MagicFuelCoal.itemID, new ItemStack(
-                CrystalMod.MagicFuelCoalSuper), 0.7F);
+        this.addInfusing(CrystalMod.MagicFuelCoal.itemID, new ItemStack(CrystalMod.MagicFuelCoalSuper), 0.7F);
+        this.addInfusing(CrystalMod.InertCrystal.itemID, new ItemStack(CrystalMod.InertCrystal, 1, 5), 0.7F);
     }
 
     /**
