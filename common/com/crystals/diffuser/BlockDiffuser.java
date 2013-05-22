@@ -104,7 +104,7 @@ public class BlockDiffuser extends BlockContainer {
     }
 
     @Override
-    public Icon getBlockTextureFromSideAndMetadata(int blockSide, int blockMeta) {
+    public Icon getIcon(int blockSide, int blockMeta) {
         switch (blockSide) {
             case 0:
                 return icons[0];

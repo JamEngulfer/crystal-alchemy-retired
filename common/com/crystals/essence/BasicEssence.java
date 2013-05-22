@@ -32,7 +32,7 @@ public class BasicEssence extends Item {
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void updateIcons(IconRegister iconRegister) {
+    public void registerIcons(IconRegister iconRegister) {
         // icons[0] = iconRegister.registerIcon("CrystalAlchemy:EmptyBottle");
         icons[1] = iconRegister.registerIcon("CrystalAlchemy:LuminousEssence");
         icons[2] = iconRegister.registerIcon("CrystalAlchemy:ExplosiveEssence");

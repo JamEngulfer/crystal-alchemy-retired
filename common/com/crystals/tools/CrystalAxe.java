@@ -17,8 +17,6 @@ import net.minecraft.world.World;
 import com.crystals.CrystalMod;
 import com.crystals.essence.Essence;
 
-import cpw.mods.fml.common.network.Player;
-
 public class CrystalAxe extends CrystalToolBase {
 
     public static final Block[] blocksEffectiveAgainst = new Block[] {
@@ -192,8 +190,8 @@ public class CrystalAxe extends CrystalToolBase {
     }
 
     @Override
-    public void updateIcons(IconRegister iconRegister) {
-        iconIndex = iconRegister.registerIcon("CrystalAlchemy:CrystalAxe");
+    public void registerIcons(IconRegister iconRegister) {
+        itemIcon = iconRegister.registerIcon("CrystalAlchemy:CrystalAxe");
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
