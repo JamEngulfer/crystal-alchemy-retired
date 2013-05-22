@@ -22,7 +22,7 @@ public class CrystalPick extends CrystalToolBase {
     public static final Block[] blocksEffectiveAgainst = new Block[] {
             Block.cobblestone, Block.stoneDoubleSlab, Block.stoneSingleSlab,
             Block.stone, Block.sandStone, Block.cobblestoneMossy,
-            Block.oreIron, Block.blockSteel, Block.oreCoal, Block.blockGold,
+            Block.oreIron, Block.blockIron, Block.oreCoal, Block.blockGold,
             Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.ice,
             Block.netherrack, Block.oreLapis, Block.blockLapis,
             Block.oreRedstone, Block.oreRedstoneGlowing, Block.rail,
@@ -44,7 +44,7 @@ public class CrystalPick extends CrystalToolBase {
                 : par1Block != Block.blockDiamond
                         && par1Block != Block.oreDiamond ? par1Block != Block.oreEmerald
                         && par1Block != Block.blockEmerald ? par1Block != Block.blockGold
-                        && par1Block != Block.oreGold ? par1Block != Block.blockSteel
+                        && par1Block != Block.oreGold ? par1Block != Block.blockIron
                         && par1Block != Block.oreIron ? par1Block != Block.blockLapis
                         && par1Block != Block.oreLapis ? par1Block != Block.oreRedstone
                         && par1Block != Block.oreRedstoneGlowing ? par1Block.blockMaterial == Material.rock ? true
@@ -67,8 +67,8 @@ public class CrystalPick extends CrystalToolBase {
     }
 
     @Override
-    public void updateIcons(IconRegister iconRegister) {
-        iconIndex = iconRegister.registerIcon("CrystalAlchemy:CrystalPick");
+    public void registerIcons(IconRegister iconRegister) {
+        itemIcon = iconRegister.registerIcon("CrystalAlchemy:CrystalPick");
     }
     
     public boolean onBlockDestroyed(ItemStack item, World world, int blockID, int x, int y, int z, EntityLiving entity)
@@ -88,7 +88,7 @@ public class CrystalPick extends CrystalToolBase {
                         
                         if (Essence.essenceList[eID].essenceID == 3) {
                             
-                            int weight = 33;
+                            int weight = 20;
 
                             int random = 0 + (int)(Math.random() * ((100 - 0) + 1));
                             if(random < weight){
@@ -114,7 +114,7 @@ public class CrystalPick extends CrystalToolBase {
         Block[] blockList = new Block[] {
                 Block.cobblestone, Block.stoneDoubleSlab, Block.stoneSingleSlab,
                 Block.stone, Block.sandStone, Block.cobblestoneMossy,
-                Block.oreIron, Block.blockSteel, Block.oreCoal, Block.blockGold,
+                Block.oreIron, Block.blockIron, Block.oreCoal, Block.blockGold,
                 Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.ice,
                 Block.netherrack, Block.oreLapis, Block.blockLapis,
                 Block.oreRedstone, Block.oreRedstoneGlowing, Block.rail,
@@ -227,7 +227,7 @@ public class CrystalPick extends CrystalToolBase {
 
                         if (Essence.essenceList[eID].essenceID == 3) {
 
-                            information.add("Healing XP Effect");
+                            information.add("Healing Effect");
 
                         }
                         
