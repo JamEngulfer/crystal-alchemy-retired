@@ -30,7 +30,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "CrystalAlchemy", name = "Crystal Alchemy", version = "0.03")
+@Mod(modid = "CrystalAlchemy", name = "Crystal Alchemy", version = "0.1")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = { "CrystalMod" }, packetHandler = CrystalClientPacketHandler.class)
 public class CrystalMod {
 
