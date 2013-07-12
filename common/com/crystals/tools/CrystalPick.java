@@ -83,6 +83,7 @@ public class CrystalPick extends CrystalToolBase {
                     if (Essence.essenceList[eID] != null) {
                         
                         if (Essence.essenceList[eID].essenceID == 2) {
+                            if(!world.isRemote)
                             world.createExplosion(entity, x, y, z, 3F, true);
                         }
                         
