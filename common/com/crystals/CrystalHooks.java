@@ -50,8 +50,10 @@ public class CrystalHooks {
                                 }
 
                                 if (Essence.essenceList[eID].essenceID == 2) {
-
-                                    worldT.createExplosion(player, target.posX, target.posY + 1, target.posZ, 1F, false);
+                                    
+                                    if(!worldT.isRemote)
+                                        worldT.createExplosion(player, target.posX, target.posY + 1, target.posZ, 1F, false);
+                                    
                                     
                                 }
                                 
